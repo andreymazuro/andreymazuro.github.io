@@ -6,10 +6,10 @@ function signOut() {
 }
 
 window.onload = function() {
-  if (!gapi.auth2.getAuthInstance().isSignedIn.get()) {
+  const show = gapi.auth2.getAuthInstance().isSignedIn.get()
+  if (!show) {
     document.getElementById('sign-in').style.visibility = 'visible'
   }
-
 };
 
 function onSignIn(googleUser) {
