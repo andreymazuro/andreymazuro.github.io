@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google login</title>
+  </head>
+  <meta name="google-signin-client_id" content="370428235529-5qscjolhoeqhsclog7pdn4l8j2hoi2aa.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <style>
+    a {
+      visibility: hidden
+    }
+  </style>
+  <body>
+    <script>
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          document.getElementById('name').innerHTML = ''
+        });
+      }
+
+    function onSignIn(googleUser) {
+      document.getElementById('sign-in').style.visibility = "hidden";
+      document.getElementById('log-out').style.visibility = "visible";
+      var auth2 = gapi.auth2.getAuthInstance();
+      var profile = googleUser.getBasicProfile();
+      document.getElementById('name').innerHTML = profile.getName()
+    }
+    </script>
+
+    <div class="g-signin2" data-onsuccess="onSignIn" id="sign-in"></div>
+    <a href="" onclick="signOut();" id="log-out" >Sign out</a>
+    <h1 id="name"></h1>
+  </body>
+</html>
