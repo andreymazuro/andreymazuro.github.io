@@ -7,9 +7,7 @@ function signOut() {
 
 window.onload = function() {
   const show = gapi.auth2.getAuthInstance().isSignedIn.get()
-  console.log(show)
   if (!show) {
-    console.log('padla')
     document.getElementById('sign-in').style.visibility = "visible";
   }
 };
