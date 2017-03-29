@@ -1,4 +1,6 @@
-
+a {
+  visibility: hidden;
+}
 
 div {
   visibility: hidden;
