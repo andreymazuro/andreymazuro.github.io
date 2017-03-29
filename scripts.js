@@ -6,7 +6,7 @@ function signOut() {
 }
 
 window.onload = function() {
-  if !(gapi.auth2.getAuthInstance().isSignedIn.get()) {
+  if (!gapi.auth2.getAuthInstance().isSignedIn.get()) {
     document.getElementById('sign-in').style.visibility = 'visible'
   }
 
