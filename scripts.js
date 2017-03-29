@@ -12,8 +12,20 @@ function getUserName(googleUser) {
  return profile.getName()
 }
 
-function onSignIn(googleUser) {
+function hideSignInButton(){
   document.getElementById('sign-in').style.visibility = "hidden";
+}
+
+function showLogOutButton(){
   document.getElementById('log-out').style.visibility = "visible";
-  document.getElementById('name').innerHTML = getUserName(googleUser)
+}
+
+function showUserName(name){
+  document.getElementById('name').innerHTML = getUserName(name)
+}
+
+function onSignIn(googleUser) {
+  hideSignInButton()
+  showLogOutButton()
+  showUserName(googleUser)
 }
