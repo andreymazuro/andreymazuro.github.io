@@ -1,21 +1,19 @@
 function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    hideName()
-  });
+  auth2.signOut().then(hideName())
 }
 
 function hideName() {
   document.getElementById('name').innerHTML = ''
 }
 
-function getUserName() {
-  return googleUser.getBasicProfile();
+function getUserName(googleUser) {
+ var profile = googleUser.getBasicProfile()
+ return profile.getName()
 }
 
 function onSignIn(googleUser) {
   document.getElementById('sign-in').style.visibility = "hidden";
   document.getElementById('log-out').style.visibility = "visible";
-  var profile = getUserName()
-  document.getElementById('name').innerHTML = profile.getName()
+  document.getElementById('name').innerHTML = getUserName(googleUser)
 }
