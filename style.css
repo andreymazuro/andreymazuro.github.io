@@ -1,3 +1,7 @@
 a {
-  visibility: hidden
+  visibility: hidden;
+}
+
+div {
+  visibility: hidden;
 }

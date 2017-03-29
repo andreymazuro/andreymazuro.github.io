@@ -5,6 +5,10 @@ function signOut() {
   });
 }
 
+window.onload = function() {
+  
+};
+
 function onSignIn(googleUser) {
 document.getElementById('sign-in').style.visibility = "hidden";
 document.getElementById('log-out').style.visibility = "visible";
